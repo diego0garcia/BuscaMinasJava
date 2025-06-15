@@ -22,7 +22,7 @@
                         <Font name="System Bold" size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="button_setting" mnemonicParsing="false" prefWidth="150.0" text="Ajustes">
+                  <Button fx:id="button_leaders" mnemonicParsing="false" prefWidth="150.0" text="Records">
                      <font>
                         <Font name="System Bold" size="22.0" />
                      </font>

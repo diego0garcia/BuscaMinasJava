@@ -2,7 +2,6 @@ package es.diego.buscaminas;
 
 import java.io.IOException;
 
-import es.diego.buscaminas.propias.DataLoader;
 import es.diego.buscaminas.propias.Jugador;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -60,7 +59,6 @@ public class SelectCharacterController implements Initializable {
          @FXML
          private HBox hbox_containerDificulties;
 
-         private static final DataLoader dl = new DataLoader();
          private ObservableList<Jugador> observableListAutores;
          private static ArrayList<Jugador> misDatos;
          private static IntegerProperty dificulty = new SimpleIntegerProperty();
@@ -72,19 +70,9 @@ public class SelectCharacterController implements Initializable {
          // INICIALIZADOR
          @Override
          public void initialize(URL url, ResourceBundle rb) {
-                  // CARGAMOS EL ARRAY DE DATOS QUE SERA OBSERVADO EL CUAL ES CARGADO DEL FICHERO SAVES.TXT
-
                   setDificulty(-1);
-
-                  if (misDatos == null) {
-                           misDatos = dl.load();
-                  }
-
-                  // Valores por defecto
-                  if (misDatos.isEmpty()) {
-                           misDatos.add(new Jugador("Player 1"));
-                  }
-
+                  setMisDatos(GameController.getMisDatos());
+                 
                   // Hacemos observable el array
                   observableListAutores = FXCollections.observableArrayList(misDatos);
                   tableView_main.setItems(observableListAutores);
@@ -185,7 +173,7 @@ public class SelectCharacterController implements Initializable {
                                              observableListAutores.add(controladorPersona.getJugador());
                                              tableView_main.refresh();
                                              misDatos.add(controladorPersona.getJugador());
-                                             dl.save(misDatos);
+                                             GameController.getDl().save(misDatos);
                                     }
                            }
                   } catch (IOException ex) {
@@ -231,7 +219,7 @@ public class SelectCharacterController implements Initializable {
                            if (!itemsSeleccionados.isEmpty()) {
                                     observableListAutores.removeAll(itemsSeleccionados);
                                     misDatos = new ArrayList<>(observableListAutores);
-                                    dl.save(misDatos);
+                                    GameController.getDl().save(misDatos);
                                     cleanSelected();
                            }
                   }
@@ -312,9 +300,4 @@ public class SelectCharacterController implements Initializable {
          public static void setPlayer(Jugador aPlayer) {
                   player = aPlayer;
          }
-
-         public static DataLoader getDl() {
-                  return dl;
-         }
-
 }
