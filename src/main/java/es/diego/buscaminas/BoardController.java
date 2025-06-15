@@ -200,7 +200,7 @@ public class BoardController implements Initializable {
 
          //GUARDAR
          private void save() {
-                  SelectCharacterController.getDl().save(SelectCharacterController.getMisDatos());
+                  GameController.getDl().save(SelectCharacterController.getMisDatos());
          }
 
          //CREA EL TABLERO

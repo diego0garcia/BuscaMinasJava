@@ -1,5 +1,6 @@
 es\diego\buscaminas\App.class
 es\diego\buscaminas\SelectCharacterController.class
+es\diego\buscaminas\LeadersBoardController.class
 es\diego\buscaminas\FinalScreenController.class
 es\diego\buscaminas\propias\Jugador.class
 module-info.class
