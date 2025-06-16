@@ -37,6 +37,8 @@ public class BoardController implements Initializable {
     private int[][] numberBoard = new int[fila][columna];
     private boolean[][] revaledBoard = new boolean[fila][columna];
     private Jugador player = SelectCharacterController.getPlayer();
+    private int sec;
+    private int min;
 
     // IMAGENES
     Image bombImage = new Image((getClass().getResource("/imgs/bomb.png")).toExternalForm(), 20, 20, true, true);
@@ -46,11 +48,20 @@ public class BoardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        App.getStage().setResizable(true);
+
+        setSec(0);
+        setMin(0);
+
         hBox_BoardContainer.getChildren().remove(0);
 
         visualBoard = createBoard();
 
         hBox_BoardContainer.getChildren().add(visualBoard);
+    }
+
+    private void timmer(){
+        
     }
 
     // ACCIONES SOBRE LA CASILLA
@@ -191,6 +202,9 @@ public class BoardController implements Initializable {
         wait.setOnFinished(evnt -> {
             try {
                 App.setRoot("finalScreen");
+                App.getStage().setResizable(false);
+                App.getStage().setWidth(1000);
+                App.getStage().setHeight(600);
             } catch (IOException e) {
                 System.err.println("ERROR AL CARGAR FXML SelectCharacterController-next");
             }
@@ -333,4 +347,21 @@ public class BoardController implements Initializable {
     public static void setWin(boolean aWin) {
         win = aWin;
     }
+
+    public int getSec() {
+        return sec;
+    }
+
+    public void setSec(int sec) {
+        this.sec = sec;
+    }
+
+    public int getMin() {
+        return min;
+    }
+
+    public void setMin(int min) {
+        this.min = min;
+    }
+    
 }
