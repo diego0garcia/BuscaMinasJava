@@ -1,3 +1,4 @@
-Player 1,1,0,src/main/resources/imgs/player2.png
-Juan,1,2,src/main/resources/imgs/player3.png
+Player 1,1,1,src/main/resources/imgs/player2.png
+Juan,1,16,src/main/resources/imgs/player3.png
 andreguai,2,3,C:\Users\dgjim\Pictures\Imagenes Auxiliares\madird.png
+adada,0,0,src/main/resources/imgs/player4.png

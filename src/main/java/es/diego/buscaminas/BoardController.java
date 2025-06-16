@@ -60,19 +60,18 @@ public class BoardController implements Initializable {
         hBox_BoardContainer.getChildren().add(visualBoard);
     }
 
-    private void timmer(){
-        
-    }
-
     // ACCIONES SOBRE LA CASILLA
     private void cellActions(MouseEvent evntM) {
         Button btn = (Button) evntM.getSource();
         btn.getStyleClass().removeAll("cellDefault");
+        String coordenadas[] = btn.getId().split(",");
+        int x = Integer.parseInt(coordenadas[0]);
+        int y = Integer.parseInt(coordenadas[1]);
 
         // Click izquierdo
         if (evntM.getButton().equals(MouseButton.PRIMARY)) {
             // Comprueba si tiene bomba
-            if (btn.getGraphic() != null) {
+            if (getNumberBoard()[x][y] == -1) {
                 clickBomb(btn);
             } else {
                 clickEmpty(btn);
@@ -104,7 +103,11 @@ public class BoardController implements Initializable {
         int x = Integer.parseInt(coordenadas[0]);
         int y = Integer.parseInt(coordenadas[1]);
 
-        desvelarRecursivo(getNumberBoard(), getRevaledBoard(), x, y);
+        if (getNumberBoard()[x][y] < 1) {
+            desvelarRecursivo(getNumberBoard(), getRevaledBoard(), x, y);
+        } else {
+            btn.setText(Integer.toString(getNumberBoard()[x][y]));
+        }
     }
 
     private void desvelarRecursivo(int[][] matriz, boolean[][] visited, int fila, int columna) {
@@ -123,6 +126,8 @@ public class BoardController implements Initializable {
         Button btnAux = (Button) visualBoard.lookup(idNewButton);
         btnAux.getStyleClass().add("cellReveal");
         btnAux.setDisable(true);
+
+        btnAux.setText(Integer.toString(matriz[fila][columna]));
 
         // Recursividad
         desvelarRecursivo(matriz, visited, fila - 1, columna); // ARRIBA
@@ -168,7 +173,10 @@ public class BoardController implements Initializable {
     private void revealAllBombs() {
         for (int i = 0; i < visualBoard.getChildren().size(); i++) {
             Button btn = (Button) visualBoard.getChildren().get(i);
-            if ((btn.getGraphic() != null)) {
+            String coordenadas[] = btn.getId().split(",");
+            int x = Integer.parseInt(coordenadas[0]);
+            int y = Integer.parseInt(coordenadas[1]);
+            if ((getNumberBoard()[x][y] == -1)) {
                 btn.getStyleClass().add("cellBomb");
                 btn.getGraphic().getStyleClass().removeAll("hidden");
             }
@@ -281,7 +289,7 @@ public class BoardController implements Initializable {
                     bombImageView.getStyleClass().add("hidden");
                     btn.setGraphic(bombImageView);
                 } else {
-                    btn.setText(Integer.toString(matriz[i][j]));
+                    // btn.setText(Integer.toString(matriz[i][j]));
                 }
                 boardAux.add(btn, j, i);
                 // System.out.println(btn.getId());
@@ -363,5 +371,5 @@ public class BoardController implements Initializable {
     public void setMin(int min) {
         this.min = min;
     }
-    
+
 }

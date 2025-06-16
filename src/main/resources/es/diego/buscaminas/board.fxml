@@ -40,7 +40,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Text fx:id="text_infoDebuger" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Info_Debuger">
+                  <Text fx:id="text_infoDebuger" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text">
                      <font>
                         <Font size="20.0" />
                      </font>

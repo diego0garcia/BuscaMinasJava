@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -43,32 +44,35 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <HBox alignment="CENTER" layoutX="21.0" layoutY="221.0" prefHeight="61.0" prefWidth="154.0">
+      <VBox alignment="CENTER" layoutX="22.0" layoutY="135.0" prefHeight="147.0" prefWidth="150.0">
          <children>
+            <ImageView fx:id="imageView_2" fitHeight="102.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true" />
             <Text fx:id="text_p2" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="b">
                <font>
                   <Font size="30.0" />
                </font>
             </Text>
          </children>
-      </HBox>
-      <HBox alignment="CENTER" layoutX="175.0" layoutY="127.0" prefHeight="61.0" prefWidth="150.0">
+      </VBox>
+      <VBox alignment="CENTER" layoutX="175.0" layoutY="41.0" prefHeight="147.0" prefWidth="150.0">
          <children>
+            <ImageView fx:id="imageView_1" fitHeight="102.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true" />
             <Text fx:id="text_p1" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="a">
                <font>
                   <Font size="30.0" />
                </font>
             </Text>
          </children>
-      </HBox>
-      <HBox alignment="CENTER" layoutX="327.0" layoutY="317.0" prefHeight="61.0" prefWidth="150.0">
+      </VBox>
+      <VBox alignment="CENTER" layoutX="327.0" layoutY="228.0" prefHeight="147.0" prefWidth="150.0">
          <children>
+            <ImageView fx:id="imageView_3" fitHeight="102.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true" />
             <Text fx:id="text_p3" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="c">
                <font>
                   <Font size="30.0" />
                </font>
             </Text>
          </children>
-      </HBox>
+      </VBox>
    </children>
 </AnchorPane>
