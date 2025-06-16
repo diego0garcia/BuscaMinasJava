@@ -53,7 +53,7 @@ public class GameController implements Initializable {
 
         // Valores por defecto
         if (misDatos.isEmpty()) {
-            misDatos.add(new Jugador("Player 1"));
+            misDatos.add(new Jugador("Player 1",""));
         }
 
         // ASIGNAR ACCIONES Y ESTILO

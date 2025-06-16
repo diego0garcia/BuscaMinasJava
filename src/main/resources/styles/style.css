@@ -152,7 +152,25 @@
 #buttonDeclineSelectCharacter:hover {
   -fx-background-color: rgb(177, 0, 0);
 }
-
+#buttonCustomCharacter {
+  -fx-background-color: rgb(255, 0, 119);
+  -fx-background-radius: 20px;
+  -fx-border-color: black;
+  -fx-border-width: 2px;
+}
+#buttonCustomCharacter:hover {
+  -fx-background-color: rgb(177, 0, 83);
+}
+.photoPlayer{
+  -fx-background-color: white;
+  -fx-border-radius: 20px;
+  -fx-border-color: black;
+  -fx-border-width: 2px;
+}
+.photoPlayerSelected{
+  -fx-border-color: rgb(17, 0, 255);
+  -fx-border-width: 4px;
+}
 /*BOARD*/
 .ceell {
   -fx-pref-width: 50px;

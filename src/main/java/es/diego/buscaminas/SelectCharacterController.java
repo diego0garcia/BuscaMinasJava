@@ -131,7 +131,7 @@ public class SelectCharacterController implements Initializable {
         button_remove.setOnAction(evnt -> deleteAction());
         button_back.setOnAction(evnt -> backAction());
         button_add.setOnAction(evnt -> addAction());
-        button_modify.setOnAction(evnt -> addModify());
+        button_modify.setOnAction(evnt -> modifyAction());
         buttonDificulty1.setOnAction(evnt -> setDificulty(1));
         buttonDificulty2.setOnAction(evnt -> setDificulty(2));
         buttonDificulty3.setOnAction(evnt -> setDificulty(3));
@@ -214,9 +214,9 @@ public class SelectCharacterController implements Initializable {
             root.getStylesheets().add(getClass().getResource("/styles/style.css").toExternalForm());
 
             // Creamos nuevo jugador donde se asignaran sus valores
-            Jugador player = new Jugador("");
+            Jugador player = new Jugador("","");
             controladorPersona.initPlayer(player);
-            Scene scene = new Scene(root, 600, 500);
+            Scene scene = new Scene(root, 900, 600);
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.setTitle("Añadir Jugador");
@@ -243,7 +243,7 @@ public class SelectCharacterController implements Initializable {
     }
 
     // AÑADIR
-    private void addModify() {
+    private void modifyAction() {
         try {
             // Cargar escena
             FXMLLoader miCargador = new FXMLLoader(getClass().getResource("/es/diego/buscaminas/editPlayer.fxml"));
@@ -252,9 +252,9 @@ public class SelectCharacterController implements Initializable {
             root.getStylesheets().add(getClass().getResource("/styles/style.css").toExternalForm());
 
             // Creamos nuevo jugador donde se asignaran sus valores
-            Jugador player = new Jugador("");
+            Jugador player = new Jugador("","");
             controladorPersona.initPlayer(player);
-            Scene scene = new Scene(root, 600, 500);
+            Scene scene = new Scene(root, 900, 600);
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.setTitle("Añadir Jugador");
@@ -264,10 +264,10 @@ public class SelectCharacterController implements Initializable {
             stage.showAndWait();// Espera a que se cierre la segunda ventana
 
             // Actualizar table view
-            if (!controladorPersona.isCancelar()) {
-                if ((!controladorPersona.getJgdr().getName().isEmpty())) {
+            if (!controladorPersona.getCancelar()) {
+                if ((!controladorPersona.getJugador().getName().isEmpty())) {
                     tableView_main.getSelectionModel().getSelectedItem()
-                            .setName(controladorPersona.getJgdr().getName());
+                            .setName(controladorPersona.getJugador().getName());
                     tableView_main.refresh();
                     GameController.getDl().save(misDatos);
                 }

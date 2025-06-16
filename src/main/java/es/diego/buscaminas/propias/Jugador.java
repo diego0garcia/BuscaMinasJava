@@ -13,11 +13,11 @@ public class Jugador implements Serializable {
     private final IntegerProperty defeats = new SimpleIntegerProperty();
     private final StringProperty pahtImagen = new SimpleStringProperty();
 
-    public Jugador(String name) {
+    public Jugador(String name, String path) {
         this.name.setValue(name);
         this.wins.setValue(0);
         this.defeats.setValue(0);
-        this.pahtImagen.setValue("");
+        this.pahtImagen.setValue(path);
     }
 
     public Jugador(String name, Integer wins, Integer defeats, String path) {
