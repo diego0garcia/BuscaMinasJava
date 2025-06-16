@@ -343,6 +343,9 @@ public class SelectCharacterController implements Initializable {
     private void nextAction() {
         try {
             App.setRoot("board");
+            if (getFilas()> 25) {
+                App.getStage().setHeight(1000);
+            }
         } catch (IOException e) {
             System.err.println("ERROR AL CARGAR FXML SelectCharacterController-next");
         }
