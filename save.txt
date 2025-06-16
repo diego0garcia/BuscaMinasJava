@@ -1,0 +1,3 @@
+Player 1,0,0,src/main/resources/imgs/player2.png
+Juan,1,0,src/main/resources/imgs/player3.png
+andreguai,2,3,C:\Users\dgjim\Pictures\Imagenes Auxiliares\madird.png

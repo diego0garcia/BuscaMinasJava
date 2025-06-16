@@ -6,22 +6,25 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class Jugador implements Serializable{
+public class Jugador implements Serializable {
     private static final long serialVersionUID = 1L;
     private final StringProperty name = new SimpleStringProperty();
     private final IntegerProperty wins = new SimpleIntegerProperty();
     private final IntegerProperty defeats = new SimpleIntegerProperty();
+    private final StringProperty pahtImagen = new SimpleStringProperty();
 
-    public Jugador(String name) {
+    public Jugador(String name, String path) {
         this.name.setValue(name);
         this.wins.setValue(0);
         this.defeats.setValue(0);
+        this.pahtImagen.setValue(path);
     }
 
-    public Jugador(String name, Integer wins, Integer defeats) {
+    public Jugador(String name, Integer wins, Integer defeats, String path) {
         this.name.setValue(name);
         this.wins.setValue(wins);
         this.defeats.setValue(defeats);
+        this.pahtImagen.setValue(path);
     }
 
     private void addWin() {
@@ -72,4 +75,16 @@ public class Jugador implements Serializable{
         this.DefeatsProperty().set(wins);
     }
 
+    // PATH IMAGE
+    public StringProperty PahtImagenProperty() {
+        return pahtImagen;
+    }
+
+    public final java.lang.String getPahtImagen() {
+        return this.PahtImagenProperty().get();
+    }
+
+    public final void setPahtImagen(final java.lang.String pathImage) {
+        this.PahtImagenProperty().set(pathImage);
+    }
 }
