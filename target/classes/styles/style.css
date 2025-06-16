@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap");
+
+/*GENERAL*/
+.text {
+    -fx-font-family: "Pixelify Sans";
+}
+
+.button {
+    -fx-font-family: "Pixelify Sans";
+    -fx-text-fill: white;
+    -fx-border-radius: 20px;
+}
+
+.buttonDefaultStyle{
+    -fx-pref-width: 150px;
+    -fx-pref-height: 50px;
+    -fx-font-size: 16px;
+    -fx-background-color: #3498db;
+    -fx-font-size: 20px;
+}
+
+/*MAIN SECENE*/
+.buttonStartScene {
+    -fx-pref-width: 150px;
+    -fx-pref-height: 50px;
+    -fx-font-size: 16px;
+    -fx-background-color: #3498db;
+    -fx-font-size: 20px;
+}
+
+.buttonStartScene:hover {
+    -fx-background-color: #2272a7;
+}
+
+.tittle {
+    -fx-font-size: 80px;
+}
+
+.buttonCharacterScene {
+    -fx-pref-width: 180px;
+    -fx-pref-height: 50px;
+    -fx-background-color: #3498db;
+    -fx-font-size: 20px;
+}
+
+/*SELECT CHARACTER*/
+#deleteButton {
+    -fx-background-color: red;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 50px;
+    -fx-font-size: 20px;
+}
+
+#nextButton {
+    -fx-background-color: greenyellow;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 50px;
+    -fx-font-size: 20px;
+}
+
+#addButton {
+    -fx-background-color: #3498db;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 50px;
+    -fx-font-size: 20px;
+}
+
+#deleteButton:hover {
+    -fx-background-color: rgb(177, 0, 0);
+}
+
+#nextButton:hover {
+    -fx-background-color: rgb(117, 173, 31);
+}
+
+#addButton:hover{
+    -fx-background-color: #2272a7;
+}
+
+#backButton {
+    -fx-pref-width: 100px;
+    -fx-pref-height: 30px;
+    -fx-background-color: #f39c12;
+    -fx-font-size: 20px;
+}
+
+#backButton:hover {
+    -fx-background-color: #b4750f;
+}
+
+#stackPaneSelectorCharacter {
+}
+
+#tableView {
+    -fx-border-radius: 20px;
+    -fx-font-family: "Pixelify Sans";
+    -fx-font-size: 20px;
+}
+
+#selectPlayerTittle {
+    -fx-font-family: "Pixelify Sans";
+    -fx-font-size: 40px;
+}
+
+.tableColumn {
+    -fx-alignment: CENTER;
+}
+
+#textDificulty{
+        -fx-font-size: 40px;
+}
+
+.buttonDificulty.selected{
+    -fx-background-color: red;
+}
+
+.buttonDificulty{
+    -fx-pref-width: 190px;
+    -fx-pref-height: 50px;
+    -fx-font-size: 16px;
+    -fx-background-color: #3498db;
+    -fx-font-size: 20px;
+}
+
+/*ADD CHARACTER*/
+#buttonAcceptSelectCharacter {
+    -fx-background-color: greenyellow;
+    -fx-pref-width: 150px;
+    -fx-pref-height: 50px;
+    -fx-font-size: 20px;
+}
+#buttonAcceptSelectCharacter:hover {
+    -fx-background-color: rgb(117, 173, 31);
+}
+#buttonDeclineSelectCharacter {
+    -fx-background-color: red;
+    -fx-pref-width: 150px;
+    -fx-pref-height: 50px;
+    -fx-font-size: 20px;
+}
+#buttonDeclineSelectCharacter:hover {
+    -fx-background-color: rgb(177, 0, 0);
+}
+
+/*BOARD*/
+.ceell{
+    -fx-pref-width: 50px;
+    -fx-pref-height: 50px;
+    -fx-margin: 5px;
+    -fx-border-radius: 0px;
+    -fx-border-color: black;
+    -fx-border-size: 3px;
+    -fx-font-size: 14px;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+
+.cellDefault{
+    -fx-background-color: lightgrey;
+}
+
+.cellReveal{
+    -fx-background-color: white;
+}
+
+.cellMark{
+    -fx-border-color: red;
+    -fx-background-color: white;
+}
+
+.cellDefeat{
+    -fx-background-color: orange;
+}
+
+.cellBomb{
+    -fx-background-color: greenyellow;
+}
+
+.hidden{
+    -fx-opacity: 0;
+}
+
+.ceell:disabled {
+    -fx-opacity: 1.0;
+}
+.gridPane:disabled {
+    -fx-opacity: 1.0;
+}

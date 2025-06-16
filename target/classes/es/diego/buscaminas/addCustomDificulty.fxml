@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="503.0" prefWidth="763.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.diego.buscaminas.AddCustomDificultyController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="363.0" prefWidth="753.0">
+         <children>
+            <HBox alignment="TOP_CENTER" prefHeight="166.0" prefWidth="763.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="AÑADIR">
+                     <font>
+                        <Font size="68.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="90.0" prefWidth="763.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="25.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="FILAS:" wrappingWidth="286.6357421875">
+                           <font>
+                              <Font size="35.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="290.0" prefWidth="242.0" spacing="10.0">
+                     <children>
+                        <TextField fx:id="textField_row" prefHeight="50.0" prefWidth="200.0" style="-fx-font-size: 26;" styleClass="text">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="168.0" prefWidth="763.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="25.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="COLUMNAS:" wrappingWidth="287.94384765625">
+                           <font>
+                              <Font size="35.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="290.0" prefWidth="242.0" spacing="10.0">
+                     <children>
+                        <TextField fx:id="textField_column" prefHeight="56.0" prefWidth="310.0" style="-fx-font-size: 26;" styleClass="text">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="77.0" prefWidth="763.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="25.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="BOMBAS:" wrappingWidth="285.69921875">
+                           <font>
+                              <Font size="35.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="290.0" prefWidth="242.0" spacing="10.0">
+                     <children>
+                        <TextField fx:id="textField_bomb" prefHeight="50.0" prefWidth="200.0" style="-fx-font-size: 26;" styleClass="text">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="210.0" prefWidth="763.0" spacing="25.0">
+               <children>
+                  <Button id="buttonDeclineSelectCharacter" fx:id="button_decline" mnemonicParsing="false" text="CANCELAR">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button id="buttonAcceptSelectCharacter" fx:id="button_accept" mnemonicParsing="false" text="ACEPTAR">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</StackPane>
