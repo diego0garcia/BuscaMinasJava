@@ -83,6 +83,7 @@
                <children>
                   <Button id="deleteButton" fx:id="button_remove" mnemonicParsing="false" text="BORRAR" />
                   <Button id="addButton" fx:id="button_add" mnemonicParsing="false" text="AÑADIR" />
+                  <Button id="modifyButton" fx:id="button_modify" mnemonicParsing="false" text="MODIFICAR" />
                   <Button id="nextButton" fx:id="button_next" mnemonicParsing="false" text="SELECCIONAR" />
                </children>
             </HBox>
