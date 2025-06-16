@@ -1,0 +1,2 @@
+Player 1,0,0,src/main/resources/imgs/player2.png
+Damian,1,0,src/main/resources/imgs/player3.png

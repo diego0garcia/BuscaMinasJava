@@ -1,5 +1,6 @@
 package es.diego.buscaminas;
 
+import java.io.File;
 import java.io.IOException;
 
 import es.diego.buscaminas.propias.Jugador;
@@ -18,8 +19,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.control.SelectionMode;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
@@ -46,6 +50,8 @@ public class SelectCharacterController implements Initializable {
     private TableColumn<Jugador, Number> tableClumn_2;
     @FXML
     private TableColumn<Jugador, Number> tableClumn_3;
+    @FXML
+    private TableColumn<Jugador, String> tableClumn_photo;
     @FXML
     private Button buttonDificulty1;
     @FXML
@@ -83,6 +89,42 @@ public class SelectCharacterController implements Initializable {
         tableClumn_1.setCellValueFactory(cellData -> cellData.getValue().NameProperty());
         tableClumn_2.setCellValueFactory(cellData -> cellData.getValue().WinsProperty());
         tableClumn_3.setCellValueFactory(cellData -> cellData.getValue().DefeatsProperty());
+        tableClumn_photo.setCellValueFactory(cellData -> cellData.getValue().PahtImagenProperty());
+
+        tableClumn_photo.setCellFactory(v -> {
+
+            return new TableCell<Jugador, String>() {
+                private ImageView view = new ImageView();
+                
+                @Override
+                // ITEM ES LA RUTA DE LA IMAGEN QUE ES UNA STRING
+                protected void updateItem(String item, boolean empty) {
+                    super.updateItem(item, empty);
+                    //Imagen por default
+                    if (item == null || empty) {
+                        // CREAMOS UN OBJ RUTA CON LA RUTA A LA IMAGEN
+                        File imageFile = new File("src/main/resources/imgs/player1.png");
+                        // TRANSFORMAMOS LA RUTA EN UNA URI PARA QUE JAVAFX LA PUEDA CARGAR
+                        String fileLocation = imageFile.toURI().toString();
+                        // CREAMOS LA IMAGEN
+                        Image image = new Image(fileLocation, 100, 100, true, true);
+                        // MOSTRAMOS LA IMAGEN
+                        view.setImage(image);
+                        setGraphic(view);
+                    } else {
+                        // CREAMOS UN OBJ RUTA CON LA RUTA A LA IMAGEN
+                        File imageFile = new File(item);
+                        // TRANSFORMAMOS LA RUTA EN UNA URI PARA QUE JAVAFX LA PUEDA CARGAR
+                        String fileLocation = imageFile.toURI().toString();
+                        // CREAMOS LA IMAGEN
+                        Image image = new Image(fileLocation, 100, 100, true, true);
+                        // MOSTRAMOS LA IMAGEN
+                        view.setImage(image);
+                        setGraphic(view);
+                    }
+                }
+            };
+        });
 
         // Asignamos eventos a los botones
         stackPane_main.setOnMouseClicked(evnt -> cleanSelected());
@@ -199,6 +241,7 @@ public class SelectCharacterController implements Initializable {
             System.out.println("ERROR AL CARGAR VENTANA AÑADIR SelectController-addAction");
         }
     }
+
     // AÑADIR
     private void addModify() {
         try {
@@ -220,16 +263,16 @@ public class SelectCharacterController implements Initializable {
             stage.initModality(Modality.APPLICATION_MODAL);// La ventana se muestra modal
             stage.showAndWait();// Espera a que se cierre la segunda ventana
 
-            
             // Actualizar table view
             if (!controladorPersona.isCancelar()) {
                 if ((!controladorPersona.getJgdr().getName().isEmpty())) {
-                    tableView_main.getSelectionModel().getSelectedItem().setName(controladorPersona.getJgdr().getName());                    
+                    tableView_main.getSelectionModel().getSelectedItem()
+                            .setName(controladorPersona.getJgdr().getName());
                     tableView_main.refresh();
                     GameController.getDl().save(misDatos);
                 }
             }
-            
+
             // Limpiamos seleccionado
             cleanSelected();
         } catch (IOException ex) {
